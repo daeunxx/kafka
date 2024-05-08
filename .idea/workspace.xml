@@ -4,30 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a84f9680-fe29-48a7-99ff-4d4517e3ca77" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kt/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kt/SampleKeyProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kt/SamplePartitionPickProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kt/SampleProducer.java" afterDir="false" />
+    <list default="true" id="a84f9680-fe29-48a7-99ff-4d4517e3ca77" name="Changes" comment="카프카 기본 토픽 및 파티션 생성">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kt/ProducerCallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kt/SampleAsyncCallbackProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kt/SampleCustomPartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kt/SampleMetaCheckProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kt/CustomPartitioner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kt/CustomPartitioner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kt/SampleKeyProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kt/SampleKeyProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kt/SamplePartitionPickProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kt/SamplePartitionPickProducer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -73,6 +66,7 @@
   "keyToString": {
     "Gradle.Build inclass-kafka-producer.executor": "Run",
     "Gradle.inclass-kafka-producer [:SampleKeyProducer.main()].executor": "Run",
+    "Gradle.inclass-kafka-producer [:SampleMetaCheckProducer.main()].executor": "Run",
     "Gradle.inclass-kafka-producer [:SamplePartitionPickProducer.main()].executor": "Run",
     "Gradle.inclass-kafka-producer [:SampleProducer.main()].executor": "Run",
     "Gradle.inclass-kafka-producer [:SimpleProducer.main()].executor": "Run",
@@ -90,13 +84,26 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "editor.preferences.import",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.SampleKeyProducer">
+  <component name="RunManager" selected="Application.SampleMetaCheckProducer">
     <configuration name="SampleKeyProducer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.kt.SampleKeyProducer" />
+      <module name="inclass-kafka-producer.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kt.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SampleMetaCheckProducer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.kt.SampleMetaCheckProducer" />
       <module name="inclass-kafka-producer.main" />
       <extension name="coverage">
         <pattern>
@@ -136,6 +143,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SampleMetaCheckProducer" />
         <item itemvalue="Application.SamplePartitionPickProducer" />
         <item itemvalue="Application.SampleKeyProducer" />
         <item itemvalue="Application.SampleProducer" />
@@ -157,22 +165,35 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715130772601</updated>
-      <workItem from="1715130773599" duration="3588000" />
+      <workItem from="1715130773599" duration="5711000" />
     </task>
+    <task id="LOCAL-00001" summary="카프카 기본 토픽 및 파티션 생성">
+      <option name="closed" value="true" />
+      <created>1715136438373</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715136438373</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/kt/Main.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="카프카 기본 토픽 및 파티션 생성" />
+    <option name="LAST_COMMIT_MESSAGE" value="카프카 기본 토픽 및 파티션 생성" />
   </component>
 </project>
