@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a84f9680-fe29-48a7-99ff-4d4517e3ca77" name="Changes" comment="BOOTSTAP_SERVERS 값 띄어쓰기 없어야함">
+    <list default="true" id="a84f9680-fe29-48a7-99ff-4d4517e3ca77" name="Changes" comment="멱등성">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kt/SampleAutoCommitConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kt/SampleConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kt/SampleManualAsyncCommitConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kt/SampleManualSyncCommitConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kt/SampleShutdownHookConsumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,8 +64,13 @@
   "keyToString": {
     "Gradle.Build inclass-kafka-producer.executor": "Run",
     "Gradle.inclass-kafka-producer [:SampleAsyncCallbackProducer.main()].executor": "Run",
+    "Gradle.inclass-kafka-producer [:SampleAutoCommitConsumer.main()].executor": "Run",
+    "Gradle.inclass-kafka-producer [:SampleConsumer.main()].executor": "Run",
     "Gradle.inclass-kafka-producer [:SampleCustomPartition.main()].executor": "Run",
+    "Gradle.inclass-kafka-producer [:SampleIdemProducer.main()].executor": "Run",
     "Gradle.inclass-kafka-producer [:SampleKeyProducer.main()].executor": "Run",
+    "Gradle.inclass-kafka-producer [:SampleManualAsyncCommitConsumer.main()].executor": "Run",
+    "Gradle.inclass-kafka-producer [:SampleManualSyncCommitConsumer.main()].executor": "Run",
     "Gradle.inclass-kafka-producer [:SampleMetaCheckProducer.main()].executor": "Run",
     "Gradle.inclass-kafka-producer [:SamplePartitionPickProducer.main()].executor": "Run",
     "Gradle.inclass-kafka-producer [:SampleProducer.main()].executor": "Run",
@@ -83,9 +93,9 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.SampleIdemProducer">
-    <configuration name="SampleAsyncCallbackProducer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.kt.SampleAsyncCallbackProducer" />
+  <component name="RunManager" selected="Application.SampleManualSyncCommitConsumer">
+    <configuration name="SampleAutoCommitConsumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.kt.SampleAutoCommitConsumer" />
       <module name="inclass-kafka-producer.main" />
       <extension name="coverage">
         <pattern>
@@ -97,8 +107,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SampleCustomPartition" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.kt.SampleCustomPartition" />
+    <configuration name="SampleConsumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.kt.SampleConsumer" />
       <module name="inclass-kafka-producer.main" />
       <extension name="coverage">
         <pattern>
@@ -123,8 +133,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SampleMetaCheckProducer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.kt.SampleMetaCheckProducer" />
+    <configuration name="SampleManualAsyncCommitConsumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.kt.SampleManualAsyncCommitConsumer" />
       <module name="inclass-kafka-producer.main" />
       <extension name="coverage">
         <pattern>
@@ -136,8 +146,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SamplePartitionPickProducer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.kt.SamplePartitionPickProducer" />
+    <configuration name="SampleManualSyncCommitConsumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.kt.SampleManualSyncCommitConsumer" />
       <module name="inclass-kafka-producer.main" />
       <extension name="coverage">
         <pattern>
@@ -151,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SampleManualSyncCommitConsumer" />
+        <item itemvalue="Application.SampleManualAsyncCommitConsumer" />
+        <item itemvalue="Application.SampleAutoCommitConsumer" />
+        <item itemvalue="Application.SampleConsumer" />
         <item itemvalue="Application.SampleIdemProducer" />
-        <item itemvalue="Application.SampleCustomPartition" />
-        <item itemvalue="Application.SampleAsyncCallbackProducer" />
-        <item itemvalue="Application.SampleMetaCheckProducer" />
-        <item itemvalue="Application.SamplePartitionPickProducer" />
       </list>
     </recent_temporary>
   </component>
@@ -174,7 +184,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715130772601</updated>
-      <workItem from="1715130773599" duration="10283000" />
+      <workItem from="1715130773599" duration="12883000" />
     </task>
     <task id="LOCAL-00001" summary="카프카 기본 토픽 및 파티션 생성">
       <option name="closed" value="true" />
@@ -200,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715150186148</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="멱등성">
+      <option name="closed" value="true" />
+      <created>1715150816661</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715150816661</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +239,7 @@
     <MESSAGE value="카프카 기본 토픽 및 파티션 생성" />
     <MESSAGE value="callBack 메시지 생성" />
     <MESSAGE value="BOOTSTAP_SERVERS 값 띄어쓰기 없어야함" />
-    <option name="LAST_COMMIT_MESSAGE" value="BOOTSTAP_SERVERS 값 띄어쓰기 없어야함" />
+    <MESSAGE value="멱등성" />
+    <option name="LAST_COMMIT_MESSAGE" value="멱등성" />
   </component>
 </project>
