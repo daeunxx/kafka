@@ -13,7 +13,7 @@ import org.apache.kafka.common.serialization.StringSerializer;
 public class SampleMetaCheckProducer {
 
   private final static String TOPIC_NAME = "producer_client_test_001";
-  private final static String BOOTSTRAP_SERVERS = "kbroker01:9092, kbroker02:9092, kbroker03:9092";
+  private final static String BOOTSTRAP_SERVERS = "kbroker01:9092,kbroker02:9092,kbroker03:9092";
 
   private final static int msgCount = 2000;
 
